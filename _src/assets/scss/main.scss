@@ -1,0 +1,169 @@
+$color-blue: #affdf5;
+$color-green: #17cd4b;
+$color-purple: #9805ed;
+$color-pink: #ed05d6;
+$color-dark: black;
+$color-white: white;
+
+.background {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(to bottom, $color-blue 0%, $color-blue 70%, $color-green 70%, $color-green 100%);
+}
+
+.monster-body {
+  background: $color-purple;
+  border: solid $color-pink 2px;
+  border-radius: 15px;
+}
+
+.face {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  bottom: 100px;
+  left: 100px;
+  transition: transform ease 2s;
+  &:hover {
+    transform: translate(115px, -90px) scale(1.5);
+  }
+}
+
+.leg {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px 50px 0 0;
+  position: absolute;
+  transform: rotate(180deg);
+}
+
+.leg-1 {
+  bottom: -54px;
+  left: 40px;
+}
+
+.leg-2 {
+  bottom: -54px;
+  right: 40px;
+}
+
+.arm {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px 50px 0 0;
+}
+
+.arm-1 {
+  position: absolute;
+  bottom: 50px;
+  left: -54px;
+  transform: rotate(-90deg);
+}
+
+.arm-2 {
+  position: absolute;
+  bottom: 50px;
+  right: -54px;
+  transform: rotate(90deg);
+}
+
+.eyes {
+  width: 100px;
+  height: 50px;
+  position: absolute;
+  top: 65px;
+  left: 50px;
+  transform: translate(0%, -50%);
+  display: flex;
+  justify-content: space-between;
+}
+
+.eye {
+  background: $color-white;
+  width: 40px;
+  height: 50px;
+  border-radius: 50%;
+  border: solid $color-dark 2px;
+}
+
+.pupil {
+  background: $color-dark;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+}
+
+.ear {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 40px solid $color-pink;  
+}
+
+.ear-1 {
+  position: absolute;
+  top: -40px;
+  left: 25px;
+}
+
+.ear-2 {
+  position: absolute;
+  top: -40px;
+  right: 25px;
+}
+
+.mouth {
+  font-size: 100px;
+  width: 75px;
+  height: 5px;
+  position: absolute;
+  bottom: 40px;
+  left: 125px;
+  transform: rotate(90deg);
+}
+.eyebrow {
+  width: 50px;
+  height: 2px;
+  background-color: black;
+  color: black;
+  border: none;
+}
+
+.eyebrow-1 {
+  position: absolute;
+  left: 40px;
+  top: 20px;
+  transform: rotate(-20deg);
+  transition: transform ease 2s;
+  .face:hover & {
+    transform: rotate(20deg);
+  }
+}
+
+.eyebrow-2 {
+  position: absolute;
+  right: 40px;
+  top: 20px;
+  transform: rotate(20deg);
+  transition: transform ease 2s;
+  .face:hover & {
+    transform: rotate(-20deg);
+  }
+}
+
+.message {
+  position: absolute;
+  top: -50px;
+  right: -150px;
+  background: white;
+  border-radius: 20%;
+  padding: 10px;
+  display: none;
+  .face:hover & {
+    display: block;
+  }
+}
